@@ -1,0 +1,95 @@
+.footer {
+  align-items: center;
+  background: $primary-color;
+  color: $neutral-max;
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  padding: 180px 140px;
+
+  @include respond-to("md") {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+    padding: 120px 100px;
+  }
+
+  @include respond-to("sm") {
+    padding: 60px 40px;
+  }  
+
+  &__title {
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 40px;
+
+    @include respond-to("md") {
+      margin-bottom: 20px;
+    }
+
+    @include respond-to("sm") {
+      font-size: 18px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  li {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+
+    @include respond-to("md") {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    @include respond-to("sm") {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+  }
+
+  &__contact {
+    li, .footer__title {
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+
+      @include respond-to("md") {
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    ul {
+      width: 80%;
+      @include respond-to("md") {
+        margin: 0 auto;
+      }
+    }
+
+    li img {
+      width: 30px;
+      @include respond-to("sm") {
+        width: 20px;
+      }
+    }
+
+    li:first-of-type {
+      margin-left: 50px;
+      @include respond-to("md") {
+        margin-left: 0;
+      }
+    }
+  }
+
+  img {
+    display: inline-block
+  }
+}

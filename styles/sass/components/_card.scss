@@ -1,0 +1,70 @@
+$card-color: $primary-color;
+$card-bg-color: $neutral-max;
+
+.card {
+  background-color: $card-bg-color;
+  border: 2px solid $card-color;
+  border-radius: 40px;
+  color: $card-color;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  justify-content: flex-start;
+  height: 320px;
+  padding: 50px 20px 20px 50px;
+  width: 440px;
+
+  @include respond-to("xxml") {
+    font-size: 14px;
+    padding: 30px 40px 20px 30px;
+    width: 400px;
+    height: 300px;
+  }
+
+  @include respond-to("xxl") {
+    font-size: 13px;
+    height: 240px;
+    width: 300px;
+  }
+
+  @include respond-to("sm") {
+    padding: 30px 20px 20px 30px;
+    height: auto;
+    font-size: 16px;
+    width: 90%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    @include respond-to("xxl") {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+  }
+
+  &__icon {
+    object-fit: contain;
+    object-position: 0;
+    height: 30%;
+    margin-bottom: 40px;
+    width: 20%;
+
+    @include respond-to("xxl") {
+      height: 28%;
+      margin-bottom: 20px;
+      width: 16%;
+    }
+  }
+}

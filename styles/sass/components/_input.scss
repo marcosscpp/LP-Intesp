@@ -1,0 +1,37 @@
+$field-color: #eae9e9;
+
+input,
+select {
+  background: $field-color;
+  border: none;
+  border-radius: 50px;
+  display: block;
+  height: 68px;
+  margin: 0 auto 5px auto;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 30px;
+
+  @include respond-to("xxl") {
+    height: 48px;
+  }
+  &.error {
+    outline: 2px solid #be2f0b;
+  }
+}
+
+.error-message.error {
+  color: #be2f0b;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: block;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+input::placeholder,
+select,
+button[type="submit"] {
+  color: $primary-color;
+  font-size: clamp(1rem, 1vw, 2rem);
+  text-transform: uppercase;
+}

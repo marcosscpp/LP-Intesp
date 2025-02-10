@@ -1,0 +1,53 @@
+@mixin font-face($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url("#{$font-path}/#{$file}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin before-degree {
+  position: relative;
+  &::before {
+    content: "º";
+    font-size: 1em;
+    left: -0.5em;
+    top: 0;
+    position: absolute;
+  }
+}
+
+@mixin enable-pseudo-elements(
+  $top: null,
+  $bottom: null,
+  $right: null,
+  $left: null,
+  $index: 0
+) {
+  content: "";
+  position: absolute;
+  z-index: $index;
+
+  @if $top != null {
+    top: $top;
+  }
+
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+
+  @if $right != null {
+    right: $right;
+  }
+
+  @if $left != null {
+    left: $left;
+  }
+}

@@ -1,0 +1,177 @@
+$pad: 60px;
+$headline-color: $primary-color;
+$bg-color: $primary-color;
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-left: $pad * 1.2;
+  position: relative;
+  min-height: 100vh;
+
+  @include respond-to("xxxl") {
+    align-items: flex-end;
+  }
+
+  @include respond-to("xl") {
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    padding-top: $pad * 0.6;
+    text-align: center;
+  }
+
+  &__logo {
+    $logo-width: 180px;
+
+    height: $logo-width * 0.55;
+    margin: 0 auto 15px;
+    width: $logo-width;
+
+    @include respond-to("xxl") {
+      $logo-width: 130px;
+
+      height: $logo-width * 0.55;
+      margin-bottom: 0;
+      width: $logo-width;
+    }
+  }
+
+  &__headline {
+    color: $headline-color;
+    font: {
+      size: clamp(20px, 2vw, 52px);
+      weight: 800;
+    }
+    line-height: 1.2;
+    text-transform: uppercase;
+    width: 17em;
+
+    @include respond-to("md") {
+      font-size: clamp(18px, 4vw, 32px);
+    }
+  }
+
+  &__subheadline {
+    font: {
+      size: clamp(12px, 1vw, 32px);
+      weight: 500;
+    }
+    line-height: 1.4;
+    width: 24em;
+
+    @include respond-to("md") {
+      font-size: clamp(12px, 3vw, 20px);
+    }
+  }
+
+  &__video {
+    $video-width: 40vw;
+
+    height: auto;
+    min-width: 300px;
+    width: $video-width;
+
+    @include respond-to("xxl") {
+      .smartplayer-resume__content {
+        transform: translateY(-50%) scale(0.6) !important;
+      }
+
+      $video-width: 35vw;
+      width: $video-width;
+    }
+
+    @include respond-to("xl") {
+      $video-width: 80vw;
+      width: $video-width;
+
+      .smartplayer-resume__content {
+        transform: translateY(-50%) scale(0.8) !important;
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    // padding-top: $pad;
+    width: 105%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -99;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include respond-to("xl") {
+      position: static;
+      height: 700px;
+
+      img {
+        object-position: bottom;
+      }
+    }
+
+    @include respond-to("md") {
+      height: 400px;
+    }
+
+    &::before {
+      @include enable-pseudo-elements(null, 5%, 0%, null, -2);
+      background-color: $bg-color;
+      border-top-left-radius: 500px;
+      height: 75%;
+      width: 50%;
+
+      @include respond-to("xl") {
+        border: 50px solid $secondary-color;
+        border-radius: 100%;
+        height: 30%;
+        width: 100%;
+      }
+    }
+
+    &::after {
+      @include enable-pseudo-elements(0, null, 0, null, -1);
+      $dot-size: 25vw;
+      $dot-max-size: 500px;
+
+      background: url("#{$image-path}/dots.svg") no-repeat center / contain;
+      height: $dot-size;
+      width: $dot-size;
+
+      max-width: $dot-max-size;
+      max-height: $dot-max-size;
+
+      @include respond-to("md") {
+        display: none;
+      }
+    }
+  }
+  &__cta {
+    background-color: $primary-color;
+    color: $secondary-color;
+    margin-bottom: 40px;
+
+    @include respond-to("md") {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background-color: lighten($color: $primary-color, $amount: 30%);
+    }
+  }
+}

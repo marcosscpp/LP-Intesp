@@ -1,0 +1,9 @@
+$font-name: "Neue Haas Display";
+
+@include font-face($font-name, "NeueHaasDisplayRoman", normal);
+@include font-face($font-name, "NeueHaasDisplayBlack", 900);
+@include font-face($font-name, "NeueHaasDisplayBold", bold);
+@include font-face($font-name, "NeueHaasDisplayLight", 300);
+@include font-face($font-name, "NeueHaasDisplayMedium", 500);
+@include font-face($font-name, "NeueHaasDisplayThin", 100);
+@include font-face($font-name, "NeueHaasDisplayXThin", 200);

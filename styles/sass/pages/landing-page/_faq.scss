@@ -1,0 +1,102 @@
+.faq {
+  color: $primary-color;
+  padding: 80px 0;
+
+  &__title {
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: 40px;
+  }
+  
+  &__list {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto;
+    width: 90%;
+
+    @include respond-to("sm") {
+      gap: 20px;
+    }
+  }
+
+  &__question {
+    border: 2px solid $primary-color;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 700px;
+    padding: 40px 80px;
+    position: relative;
+
+    @include respond-to("xxl") {
+      padding: 40px;
+      width: 560px;
+    }
+  }
+
+  dt {
+    font-weight: 700;
+    font-size: clamp(16px, 2.5vw, 24px);
+
+    &::after {
+      align-items: center;
+      bottom: 32px;
+      border: solid 3px $primary-color;
+      border-radius: 50px;
+      content: "+";
+      display: flex;
+      font-size: 32px; 
+      justify-content: center;
+      height: 40px;
+      position: absolute;
+      width: 40px;
+      right: 32px;
+      will-change: align-items;
+      transition: transform .5s;
+      
+      @include respond-to("sm") {
+        border-width: 2px;
+        bottom: 20px;
+        font-size: 24px;
+        height: 30px;
+        right: 20px;
+        width: 30px;
+      }
+    } 
+    
+    &.active::after {
+      content: "-";
+      align-items: flex-end;
+      transform: rotate(180deg);
+    }
+  }
+
+  dd {
+    display: none;
+    margin-top: 20px;
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+
+  dd.active {
+    animation: expand 0.8s forwards ease-in;
+    display: block;
+  }
+}
+
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 300px;
+    opacity: 1;
+  }
+}

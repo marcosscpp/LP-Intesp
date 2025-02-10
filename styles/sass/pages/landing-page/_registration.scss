@@ -1,0 +1,139 @@
+.registration {
+  background-color: $secondary-color-lg;
+  display: flex;
+  padding-top: 120px;
+  @include respond-to("xxl") {
+    align-items: flex-end;
+    padding-top: 80px;
+  }
+
+  @include respond-to("lg") {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    position: relative;
+
+    @include respond-to("lg") {
+      display: none;
+    }
+
+    img {
+      height: auto;
+      width: 1380px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      @include enable-pseudo-elements(22%, null, null, 20%, 0);
+      border: 10vw solid $secondary-color;
+      height: 34vw;
+      width: 34vw;
+      border-radius: 50%;
+    }
+  }
+
+  &__title {
+    align-self: flex-start;
+    color: $primary-color;
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3.2vw, 4rem);
+    overflow-wrap: normal;
+    margin-top: 40px;
+    width: 18em;
+    text-transform: uppercase;
+    transform: translateX(-22%);
+    position: relative;
+    z-index: 1;
+
+    @include respond-to("xxl") {
+      margin-top: 50px;
+      width: 26em;
+    }
+
+    @include respond-to("lg") {
+      text-align: center;
+      margin: 0 auto;
+      transform: translateX(0);
+    }
+
+    @include respond-to("md") {
+      width: 12em;
+    }
+  }
+
+  &__main {
+    margin-top: 40px;
+    transform: translateX(-8%);
+
+    @include respond-to("xxl") {
+      margin-top: 50px;
+      padding-bottom: 40px;
+    }
+
+    @include respond-to("lg") {
+      transform: translateX(0);
+    }
+  }
+
+  &__texts {
+    color: $primary-color;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(2, 12em);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: clamp(18px, 1.6vw, 28px);
+    font-weight: 300;
+    justify-content: center;
+
+    @include respond-to("lg") {
+      gap: 30px;
+      margin: 20px auto;
+    }
+
+    @include respond-to("md") {
+      grid-template-columns: 80%;
+    }
+
+    h4 {
+      font-size: 1.1em;
+      width: 10em;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      @include respond-to("md") {
+        width: 90%;
+      }
+    }
+  }
+
+  &__form {
+    background: $neutral-max;
+    border: 2px solid $primary-color;
+    border-radius: 45px;
+    margin: 40px 10% 40px auto;
+    padding: 40px;
+    text-align: center;
+    width: 75%;
+    @include respond-to("xxl") {
+      width: 85%;
+    }
+
+    @include respond-to("lg") {
+      margin: 20px auto;
+      padding: 40px 20px;
+    }
+  }
+
+  &__cta {
+    margin-top: 40px;
+    font-size: 0.8em;
+    @include respond-to("xxl") {
+      padding: 0.9em 1.6em;
+      margin-top: 20px;
+    }
+  }
+}

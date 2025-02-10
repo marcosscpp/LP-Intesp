@@ -1,0 +1,37 @@
+
+.courses {
+    background-color: $secondary-color-lg;
+    overflow: hidden;
+    padding: {
+        top: 8rem;
+        bottom: 40px;
+    }
+
+    &__slide {
+        margin: 0 auto;
+        overflow: hidden;
+        width: 92%;
+    }
+
+    &__title {
+        color: $primary-color;
+        font-size: clamp(18px, 3vw, 24px);
+        margin: 0 auto;
+        margin-top: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        width: fit-content;
+        padding: 0 30px;
+    }
+
+    &__cta {
+        color: $primary-color;
+        font-size: calc($cta-font-size - 1px);
+        margin-top: 40px;
+        padding: 15px 25px; 
+    }
+
+    footer {
+        text-align: center;
+    }
+}

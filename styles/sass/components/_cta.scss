@@ -1,0 +1,48 @@
+$cta-color: $primary-color;
+$cta-bg-color: $secondary-color;
+$cta-hover-bg-color: darken($cta-bg-color, 10%);
+$cta-active-bg-color: darken($cta-bg-color, 15%);
+$cta-border-radius: 50px;
+$cta-padding: 0.9em 2.8em;
+$cta-font-weight: 900;
+$cta-font-size: clamp(16px, 2.25vw, 20px);
+$cta-transition: background-color 0.3s ease-in-out;
+
+.cta {
+  background: $cta-bg-color;
+  border: none;
+  border-radius: $cta-border-radius;
+  color: $primary-color;
+  display: inline-block;
+  text-decoration: none;
+  font: {
+    size: $cta-font-size;
+    weight: $cta-font-weight;
+  }
+  padding: $cta-padding;
+  text: {
+    align: center;
+    decoration: none;
+    transform: uppercase;
+  }
+  transition: $cta-transition;
+  
+  animation: pulse-animation 1.5s infinite ease-in-out;
+
+  &:hover {
+    background: $cta-hover-bg-color;
+    animation: none;
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

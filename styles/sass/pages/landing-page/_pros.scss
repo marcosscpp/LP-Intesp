@@ -1,0 +1,58 @@
+.pros {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  position: relative;
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 540px;
+    height: auto;
+
+    @include respond-to("xxml") {
+      width: 420px;
+    }
+
+    @include respond-to("xxl") {
+      width: 360px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 10%;
+    gap: 30px;
+    width: 90%;
+  }
+
+  .card:last-of-type {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__cta {
+    margin: 40px 0;
+  }
+
+  @include respond-to("lg") {
+    &__image,
+    &::before {
+      display: none;
+    }
+
+    &__cards {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  @include respond-to("md") {
+    padding-top: 20px;
+  }
+}

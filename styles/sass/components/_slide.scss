@@ -1,0 +1,42 @@
+.slide-controls {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 40px;
+  padding: 0 40px;
+}
+
+.pagination {
+  width: fit-content !important;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: $secondary-color;
+  height: 20px;
+  opacity: 1;
+  margin: 0 6px !important;
+  width: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  border: 3px solid $primary-color;
+}
+
+.swiper-button-disabled{
+  display:none;   
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  flex-shrink: 0;
+  color: $secondary-color;
+  font-weight: 900;
+  font-size: 28px;
+  height: 39px;
+  user-select: none;
+}
+
